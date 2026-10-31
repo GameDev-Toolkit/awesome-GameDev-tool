@@ -1,0 +1,80 @@
+name: Suggest a tool
+description: Recommend a game development tool that should be on the list
+title: "Add: "
+labels: ["suggestion"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Tool name
+      placeholder: LDtk
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Link
+      description: Canonical HTTPS link, no tracking parameters.
+      placeholder: https://ldtk.io
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it do?
+      description: One sentence, the same style as the list.
+      placeholder: Modern, friendly level editor with auto-layers, entities and a JSON format.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - "1. Game Engines"
+        - "2. Frameworks and Libraries"
+        - "3. 2D Art and Pixel Art"
+        - "4. 3D Art and Modeling"
+        - "5. VFX, Shaders and Rendering"
+        - "6. Level Design and World Building"
+        - "7. Audio and Music"
+        - "8. Assets, Textures and Icons"
+        - "9. Animation, Cinematics and Video"
+        - "10. Narrative, Dialogue and Writing"
+        - "11. Game Design and Prototyping"
+        - "12. Fantasy Consoles and Retro Dev"
+        - "13. AI and Procedural Generation"
+        - "14. Multiplayer, Networking and Backend"
+        - "15. Analytics, LiveOps and Monetization"
+        - "16. Publishing, Stores and Marketing"
+        - "17. QA, Debugging and Profiling"
+        - "18. Build, CI/CD and Version Control"
+        - "19. Programming Tools and IDEs"
+        - "20. Core Libraries, Physics and Math"
+        - "21. Localization and Accessibility"
+        - "22. Learning and Documentation"
+        - "23. Communities, News and Game Jams"
+        - "24. Everyday Utilities"
+        - "Not sure / new category"
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Any of OSS, FREE, FREEMIUM, PAID, WEB, AI.
+      placeholder: OSS FREE
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The link opens and is not a duplicate of an existing entry
+          required: true
+        - label: I have used this tool, or verified that it works today
+          required: false
