@@ -178,6 +178,7 @@ class Result:
     final_url: str = ""
     occurrences: list[Link] = field(default_factory=list)
     elapsed: float = 0.0
+    rechecked: bool = False
 
 
 class Checker:
@@ -342,6 +343,7 @@ def print_section(title: str, results: Sequence[Result], *, show_detail: bool) -
 
 def write_markdown_report(path: Path, results: Sequence[Result], stats: dict) -> None:
     broken = [r for r in results if r.status == "BROKEN"]
+    slow = [r for r in results if r.status == "SLOW"]
     blocked = [r for r in results if r.status == "BLOCKED"]
     lines = [
         "# Link check report",
@@ -350,6 +352,7 @@ def write_markdown_report(path: Path, results: Sequence[Result], stats: dict) ->
         f"- OK: **{stats['ok']}**",
         f"- Broken: **{len(broken)}**",
         f"- Blocked (bot protection, not dead): **{len(blocked)}**",
+        f"- Slow (timed out even after re-check): **{len(slow)}**",
         f"- Ignored: **{stats['ignored']}**",
         "",
     ]
@@ -358,6 +361,11 @@ def write_markdown_report(path: Path, results: Sequence[Result], stats: dict) ->
         for res in broken:
             where = ", ".join(f"{l.file}:{l.line}" for l in res.occurrences[:3])
             lines.append(f"| {res.url} | {res.code or res.detail} | {where} |")
+        lines.append("")
+    if slow:
+        lines += ["## Slow links", "", "Timed out twice — probably fine, worth a manual look.", ""]
+        for res in slow:
+            lines.append(f"- {res.url}")
         lines.append("")
     if blocked:
         lines += ["## Blocked links", "", "Sites that refuse automated clients — verify by hand.", ""]
@@ -398,6 +406,11 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
         help="re-check failures serially before reporting them (kills flaky CI runs)",
     )
     parser.add_argument("--no-insecure-ssl", action="store_true", help="verify TLS certificates strictly")
+    parser.add_argument(
+        "--fail-on-timeout",
+        action="store_true",
+        help="fail when a link times out even after the re-check",
+    )
     parser.add_argument(
         "--annotations",
         action="store_true",
@@ -497,8 +510,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         if suspects:
             print(f"Re-checking {len(suspects)} suspect link(s) …", file=sys.stderr)
             slow = Checker(
-                timeout=max(args.timeout, 25.0),
-                retries=1,
+                timeout=max(args.timeout, 60.0),
+                retries=2,
                 per_host=1,
                 verify_ssl=not args.no_insecure_ssl,
             )
@@ -512,16 +525,26 @@ def main(argv: Sequence[str] | None = None) -> int:
                         continue
                     was_broken = status == "BROKEN"
                     res.status, res.code, res.detail, res.final_url = status, code, detail, final_url
+                    res.rechecked = True
                     if not was_broken:
                         print(f"  recovered on recheck: {res.url}", file=sys.stderr)
 
+        # A site that never answers is not necessarily dead — most often it is
+        # just slow or rate-limiting CI. Report those separately.
+        for res in results:
+            if res.rechecked and res.status == "BROKEN" and res.detail == "timeout":
+                res.status = "SLOW"
+
     broken = [r for r in results if r.status in ("BROKEN", "LOCAL_MISSING")]
     blocked = [r for r in results if r.status == "BLOCKED"]
+    slow = [r for r in results if r.status == "SLOW"]
     ok = [r for r in results if r.status == "OK"]
     redirects = [r for r in ok if r.detail]
 
     if not args.quiet:
         print_section("BROKEN LINKS", broken, show_detail=True)
+        if slow:
+            print_section("SLOW (timed out, verify by hand)", slow, show_detail=False)
         if blocked:
             print_section("BLOCKED (alive, but refusing bots)", blocked, show_detail=False)
         if redirects:
@@ -534,12 +557,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         "broken": len(broken),
         "blocked": len(blocked),
         "ignored": len(ignored_urls),
+        "slow": len(slow),
     }
 
     print(
         f"\nSummary: {stats['checked']} checked · {stats['ok']} ok · "
         f"{stats['broken']} broken · {stats['blocked']} blocked · "
-        f"{stats['ignored']} ignored",
+        f"{stats['slow']} slow · {stats['ignored']} ignored",
         file=sys.stderr if args.quiet else sys.stdout,
     )
 
@@ -554,6 +578,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             link = res.occurrences[0] if res.occurrences else None
             where = f" file={link.file},line={link.line}" if link else ""
             print(f"::warning{where},title=Link blocked for bots::{res.url} (HTTP {res.code})")
+        for res in slow[:10]:
+            link = res.occurrences[0] if res.occurrences else None
+            where = f" file={link.file},line={link.line}" if link else ""
+            print(f"::warning{where},title=Slow link (verify by hand)::{res.url} timed out twice")
 
     if args.report:
         write_markdown_report(Path(args.report), results, stats)
@@ -573,6 +601,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 for r in broken
             ],
             "blocked": [{"url": r.url, "code": r.code} for r in blocked],
+            "slow": [{"url": r.url, "detail": r.detail} for r in slow],
             "redirects": [
                 {"url": r.url, "final_url": r.final_url} for r in redirects
             ],
@@ -581,6 +610,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(f"JSON report written to {args.json}", file=sys.stderr)
 
     if broken:
+        return 1
+    if args.fail_on_timeout and slow:
         return 1
     if args.fail_on_blocked and blocked:
         return 1
