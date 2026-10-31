@@ -1,0 +1,37 @@
+name: tmp-report
+on: push
+permissions:
+  contents: write
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check
+        run: |
+          python3 scripts/check_links.py --jobs 32 --timeout 30 --retries 3 \
+            --report report.md --json report.json || true
+          python3 - <<'PY'
+          import json
+          d = json.load(open('report.json'))
+          with open('recheck.md', 'w') as f:
+              for b in d['broken']:
+                  f.write(f"- [x]({b['url']})\n")
+          print('rechecking', len(d['broken']))
+          PY
+          python3 scripts/check_links.py recheck.md --jobs 4 --timeout 40 --retries 4 \
+            --report recheck-report.md --json recheck.json || true
+          mkdir -p reports && cp report.md report.json recheck-report.md reports/ 2>/dev/null || cp report.md report.json reports/
+      - name: Publish
+        run: |
+          git config user.name "link-bot"
+          git config user.email "link-bot@users.noreply.github.com"
+          git checkout --orphan arena/link-report
+          git rm -rf --cached . >/dev/null
+          git add -f reports
+          git commit -q -m "chore: link report"
+          git push -f origin HEAD:refs/heads/arena/link-report
