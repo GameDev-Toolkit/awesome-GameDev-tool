@@ -37,6 +37,7 @@ jobs:
             --jobs 32 \
             --timeout 30 \
             --retries 3 \
+            --recheck \
             --report link-report.md \
             --json link-report.json
 

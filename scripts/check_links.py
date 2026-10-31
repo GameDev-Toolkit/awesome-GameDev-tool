@@ -392,6 +392,11 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser.add_argument("--no-ignore", action="store_true", help="ignore the .linksignore rules")
     parser.add_argument("--include-images", action="store_true", help="also check image sources")
     parser.add_argument("--fail-on-blocked", action="store_true", help="treat blocked links as failures")
+    parser.add_argument(
+        "--recheck",
+        action="store_true",
+        help="re-check failures serially before reporting them (kills flaky CI runs)",
+    )
     parser.add_argument("--no-insecure-ssl", action="store_true", help="verify TLS certificates strictly")
     parser.add_argument("--report", metavar="PATH", help="write a Markdown report")
     parser.add_argument("--json", metavar="PATH", help="write a JSON report")
@@ -481,6 +486,29 @@ def main(argv: Sequence[str] | None = None) -> int:
                 print(f"  … {done}/{total}", file=sys.stderr)
 
     results.extend(local_missing)
+
+    if args.recheck:
+        suspects = [r for r in results if r.status == "BROKEN"][:60]
+        if suspects:
+            print(f"Re-checking {len(suspects)} suspect link(s) …", file=sys.stderr)
+            slow = Checker(
+                timeout=max(args.timeout, 25.0),
+                retries=1,
+                per_host=1,
+                verify_ssl=not args.no_insecure_ssl,
+            )
+            with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+                again = {pool.submit(slow.check, r.url): r for r in suspects}
+                for future in concurrent.futures.as_completed(again):
+                    res = again[future]
+                    try:
+                        status, code, detail, final_url = future.result()
+                    except Exception as exc:  # noqa: BLE001
+                        continue
+                    was_broken = status == "BROKEN"
+                    res.status, res.code, res.detail, res.final_url = status, code, detail, final_url
+                    if not was_broken:
+                        print(f"  recovered on recheck: {res.url}", file=sys.stderr)
 
     broken = [r for r in results if r.status in ("BROKEN", "LOCAL_MISSING")]
     blocked = [r for r in results if r.status == "BLOCKED"]

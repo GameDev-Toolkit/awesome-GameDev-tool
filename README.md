@@ -96,7 +96,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Armory](https://armory3d.org)** – Blender-integrated engine that exports full games from Blender's node system. `OSS` `FREE`
 - **[Bevy](https://bevyengine.org)** – Data-driven Rust engine built on the ECS pattern; very active community. `OSS` `FREE`
 - **[Buildbox](https://buildbox.com)** – Drag-and-drop engine aimed at hyper-casual mobile games. `PAID`
-- **[Cerberus X](https://www.cerberus-x.com)** – Open-source cross-platform BASIC-like language and 2D engine (successor of Monkey X). `OSS` `FREE`
+- **[Cerberus X](https://github.com/PhilMoe/cerberus)** – Open-source cross-platform BASIC-like language and 2D engine (successor of Monkey X). `OSS` `FREE`
 - **[Cocos Creator](https://www.cocos.com/en/creator)** – Open-source engine specialised in 2D/3D mobile and mini-games. `OSS` `FREE`
 - **[Construct 3](https://www.construct.net)** – No-code event-sheet engine that runs entirely in the browser. `FREEMIUM` `WEB`
 - **[CopperCube](https://www.ambiera.com/coppercube/)** – Simple 3D engine for quickly building walkthroughs and small games, no code required. `FREEMIUM`
