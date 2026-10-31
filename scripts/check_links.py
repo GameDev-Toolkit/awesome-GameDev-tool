@@ -398,6 +398,11 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
         help="re-check failures serially before reporting them (kills flaky CI runs)",
     )
     parser.add_argument("--no-insecure-ssl", action="store_true", help="verify TLS certificates strictly")
+    parser.add_argument(
+        "--annotations",
+        action="store_true",
+        help="emit GitHub Actions annotations for broken links (used in CI)",
+    )
     parser.add_argument("--report", metavar="PATH", help="write a Markdown report")
     parser.add_argument("--json", metavar="PATH", help="write a JSON report")
     parser.add_argument("--list", action="store_true", help="only list the URLs that would be checked")
@@ -537,6 +542,18 @@ def main(argv: Sequence[str] | None = None) -> int:
         f"{stats['ignored']} ignored",
         file=sys.stderr if args.quiet else sys.stdout,
     )
+
+    if args.annotations:
+        # GitHub renders these next to the offending line in a failing PR.
+        for res in broken[:20]:
+            link = res.occurrences[0] if res.occurrences else None
+            where = f" file={link.file},line={link.line}" if link else ""
+            reason = f"HTTP {res.code}" if res.code else (res.detail or "unreachable")
+            print(f"::error{where},title=Broken link::{res.url} ({reason})")
+        for res in blocked[:10]:
+            link = res.occurrences[0] if res.occurrences else None
+            where = f" file={link.file},line={link.line}" if link else ""
+            print(f"::warning{where},title=Link blocked for bots::{res.url} (HTTP {res.code})")
 
     if args.report:
         write_markdown_report(Path(args.report), results, stats)
