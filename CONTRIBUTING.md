@@ -261,11 +261,11 @@ Requires **Python 3.9+**. It reports:
 
 - **BROKEN** — 404, 410, DNS failure, TLS failure after retries → must be fixed
 - **BLOCKED** — 401/403/429 (`refusing bots`) → not necessarily dead, verify by hand
-- **SLOW** — timed out twice, even on a re-check → usually a slow host, worth checking by hand
+- **UNVERIFIED** — timed out twice, or the network died → usually a slow host, worth checking by hand
 - **REDIRECTS** — works, but the canonical URL moved → nice to update
 
 Failures are automatically re-checked before they are reported, so one slow host will not
-turn a PR red. Use `--fail-on-timeout` if you want timeouts to fail the run too.
+turn a PR red. Use `--fail-on-unverified` if you want network-level failures to fail the run too.
 
 Exit code is `1` if anything is broken, so you can wire it into your own pre-commit hook:
 

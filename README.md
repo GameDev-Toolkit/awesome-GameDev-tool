@@ -1556,7 +1556,7 @@ python3 scripts/check_links.py --report report.md --json report.json
 python3 scripts/check_links.py --fail-on-blocked   # stricter CI behaviour
 ```
 
-Results are grouped as **broken** (404, DNS failure, TLS error), **blocked** (the site is alive but refuses bots) and **slow** (timed out twice — usually just a slow host). Flaky failures are re-checked automatically before they are reported, so one sleepy server can't turn the badge red.
+Results are grouped as **broken** (404, 410, DNS failure, bad TLS certificate), **blocked** (the site is alive but refuses bots) and **unverified** (no answer twice — usually a slow host or a network blip). Every failure is re-checked before it is reported, so one sleepy server can't turn the badge red.
 
 The script needs **Python 3.9+** and nothing else — no dependencies to install. Links that are alive but unverifiable by robots are skipped via rules in [`.linksignore`](.linksignore), where every exception must include a short reason.
 

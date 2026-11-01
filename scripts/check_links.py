@@ -28,6 +28,9 @@ Notes
 * 401/403/405/429/999 and similar "go away, robot" responses are reported as
   BLOCKED, not BROKEN: the site is alive, it just refuses automated clients.
   Use `--fail-on-blocked` if you want those to fail the build as well.
+* A request that times out, or dies with "network is unreachable" / "connection
+  reset", is reported as UNVERIFIED after a re-check — that is a network blip,
+  not proof of a dead link. Use `--fail-on-unverified` for strict mode.
 * Rules in `.linksignore` are skipped, e.g. `https://x.com/*  # blocks bots`.
   Every rule should carry a short `# reason`.
 * Local (relative) links are verified against the filesystem, so a broken
@@ -67,6 +70,17 @@ USER_AGENT = (
 BLOCKED_STATUSES = {401, 403, 405, 406, 409, 418, 429, 451, 999}
 # Statuses that make a GET worth trying after a failed HEAD.
 RETRY_WITH_GET = {400, 401, 403, 405, 406, 411, 429, 501}
+
+# Errors that say something about the network, not about the website.
+NETWORK_BLIP_MARKERS = (
+    "timeout",
+    "network is unreachable",
+    "connection reset",
+    "connection aborted",
+    "temporary failure in name resolution",
+    "connection has been closed",
+    "eof occurred",
+)
 
 DEFAULT_FILES = ("README.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md")
 MARKDOWN_GLOBS = ("*.md", "docs/*.md", "docs/**/*.md")
@@ -343,7 +357,7 @@ def print_section(title: str, results: Sequence[Result], *, show_detail: bool) -
 
 def write_markdown_report(path: Path, results: Sequence[Result], stats: dict) -> None:
     broken = [r for r in results if r.status == "BROKEN"]
-    slow = [r for r in results if r.status == "SLOW"]
+    unverified = [r for r in results if r.status == "UNVERIFIED"]
     blocked = [r for r in results if r.status == "BLOCKED"]
     lines = [
         "# Link check report",
@@ -352,7 +366,7 @@ def write_markdown_report(path: Path, results: Sequence[Result], stats: dict) ->
         f"- OK: **{stats['ok']}**",
         f"- Broken: **{len(broken)}**",
         f"- Blocked (bot protection, not dead): **{len(blocked)}**",
-        f"- Slow (timed out even after re-check): **{len(slow)}**",
+        f"- Unverified (no answer even after re-check): **{len(unverified)}**",
         f"- Ignored: **{stats['ignored']}**",
         "",
     ]
@@ -362,9 +376,9 @@ def write_markdown_report(path: Path, results: Sequence[Result], stats: dict) ->
             where = ", ".join(f"{l.file}:{l.line}" for l in res.occurrences[:3])
             lines.append(f"| {res.url} | {res.code or res.detail} | {where} |")
         lines.append("")
-    if slow:
-        lines += ["## Slow links", "", "Timed out twice — probably fine, worth a manual look.", ""]
-        for res in slow:
+    if unverified:
+        lines += ["## Unverified links", "", "No response twice — probably a network blip or a slow host, worth a manual look.", ""]
+        for res in unverified:
             lines.append(f"- {res.url}")
         lines.append("")
     if blocked:
@@ -407,9 +421,11 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     )
     parser.add_argument("--no-insecure-ssl", action="store_true", help="verify TLS certificates strictly")
     parser.add_argument(
+        "--fail-on-unverified",
         "--fail-on-timeout",
+        dest="fail_on_unverified",
         action="store_true",
-        help="fail when a link times out even after the re-check",
+        help="fail when a link cannot be verified (timeout / network error)",
     )
     parser.add_argument(
         "--annotations",
@@ -509,14 +525,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         suspects = [r for r in results if r.status == "BROKEN"][:60]
         if suspects:
             print(f"Re-checking {len(suspects)} suspect link(s) …", file=sys.stderr)
-            slow = Checker(
+            second_pass = Checker(
                 timeout=max(args.timeout, 60.0),
                 retries=2,
                 per_host=1,
                 verify_ssl=not args.no_insecure_ssl,
             )
             with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-                again = {pool.submit(slow.check, r.url): r for r in suspects}
+                again = {pool.submit(second_pass.check, r.url): r for r in suspects}
                 for future in concurrent.futures.as_completed(again):
                     res = again[future]
                     try:
@@ -530,21 +546,25 @@ def main(argv: Sequence[str] | None = None) -> int:
                         print(f"  recovered on recheck: {res.url}", file=sys.stderr)
 
         # A site that never answers is not necessarily dead — most often it is
-        # just slow or rate-limiting CI. Report those separately.
+        # just slow or rate-limiting CI, or the runner's network hiccupped.
+        # Report those separately instead of failing the build.
         for res in results:
-            if res.rechecked and res.status == "BROKEN" and res.detail == "timeout":
-                res.status = "SLOW"
+            if not res.rechecked or res.status != "BROKEN":
+                continue
+            detail = (res.detail or "").lower()
+            if any(marker in detail for marker in NETWORK_BLIP_MARKERS):
+                res.status = "UNVERIFIED"
 
     broken = [r for r in results if r.status in ("BROKEN", "LOCAL_MISSING")]
     blocked = [r for r in results if r.status == "BLOCKED"]
-    slow = [r for r in results if r.status == "SLOW"]
+    unverified = [r for r in results if r.status == "UNVERIFIED"]
     ok = [r for r in results if r.status == "OK"]
     redirects = [r for r in ok if r.detail]
 
     if not args.quiet:
         print_section("BROKEN LINKS", broken, show_detail=True)
-        if slow:
-            print_section("SLOW (timed out, verify by hand)", slow, show_detail=False)
+        if unverified:
+            print_section("UNVERIFIED (network timeout, check by hand)", unverified, show_detail=False)
         if blocked:
             print_section("BLOCKED (alive, but refusing bots)", blocked, show_detail=False)
         if redirects:
@@ -557,13 +577,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         "broken": len(broken),
         "blocked": len(blocked),
         "ignored": len(ignored_urls),
-        "slow": len(slow),
+        "unverified": len(unverified),
     }
 
     print(
         f"\nSummary: {stats['checked']} checked · {stats['ok']} ok · "
         f"{stats['broken']} broken · {stats['blocked']} blocked · "
-        f"{stats['slow']} slow · {stats['ignored']} ignored",
+        f"{stats['unverified']} unverified · {stats['ignored']} ignored",
         file=sys.stderr if args.quiet else sys.stdout,
     )
 
@@ -578,10 +598,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             link = res.occurrences[0] if res.occurrences else None
             where = f" file={link.file},line={link.line}" if link else ""
             print(f"::warning{where},title=Link blocked for bots::{res.url} (HTTP {res.code})")
-        for res in slow[:10]:
+        for res in unverified[:10]:
             link = res.occurrences[0] if res.occurrences else None
             where = f" file={link.file},line={link.line}" if link else ""
-            print(f"::warning{where},title=Slow link (verify by hand)::{res.url} timed out twice")
+            print(f"::warning{where},title=Unverified link::{res.url} did not answer twice")
 
     if args.report:
         write_markdown_report(Path(args.report), results, stats)
@@ -601,7 +621,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 for r in broken
             ],
             "blocked": [{"url": r.url, "code": r.code} for r in blocked],
-            "slow": [{"url": r.url, "detail": r.detail} for r in slow],
+            "unverified": [{"url": r.url, "detail": r.detail} for r in unverified],
             "redirects": [
                 {"url": r.url, "final_url": r.final_url} for r in redirects
             ],
@@ -611,7 +631,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     if broken:
         return 1
-    if args.fail_on_timeout and slow:
+    if args.fail_on_unverified and unverified:
         return 1
     if args.fail_on_blocked and blocked:
         return 1
