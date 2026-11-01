@@ -1,0 +1,823 @@
+{
+  "generated_at": "2026-11-01T10:39:01Z",
+  "stats": {
+    "checked": 1031,
+    "files": 3,
+    "ok": 956,
+    "broken": 0,
+    "blocked": 74,
+    "ignored": 1,
+    "unverified": 1
+  },
+  "broken": [],
+  "blocked": [
+    {
+      "url": "https://phaser.io",
+      "code": 403
+    },
+    {
+      "url": "https://www.unrealengine.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.construct.net",
+      "code": 403
+    },
+    {
+      "url": "https://irrlicht.sourceforge.io",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/photoshop.html",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/illustrator.html",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/animate.html",
+      "code": 403
+    },
+    {
+      "url": "https://inkscape.org",
+      "code": 403
+    },
+    {
+      "url": "https://coolors.co",
+      "code": 403
+    },
+    {
+      "url": "https://www.autodesk.com/products/3ds-max/",
+      "code": 403
+    },
+    {
+      "url": "https://www.autodesk.com/products/maya/",
+      "code": 403
+    },
+    {
+      "url": "https://armorlab.org",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/substance3d-designer.html",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/substance3d-painter.html",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/substance3d-sampler.html",
+      "code": 403
+    },
+    {
+      "url": "https://www.blenderkit.com",
+      "code": 403
+    },
+    {
+      "url": "https://metahuman.unrealengine.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.shadertoy.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/aftereffects.html",
+      "code": 403
+    },
+    {
+      "url": "https://pixabay.com/sound-effects/",
+      "code": 403
+    },
+    {
+      "url": "https://sox.sourceforge.net",
+      "code": 403
+    },
+    {
+      "url": "https://www.gamedevmarket.net",
+      "code": 403
+    },
+    {
+      "url": "https://fab.com",
+      "code": 403
+    },
+    {
+      "url": "https://free3d.com",
+      "code": 403
+    },
+    {
+      "url": "https://poly.pizza",
+      "code": 403
+    },
+    {
+      "url": "https://www.turbosquid.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.models-resource.com",
+      "code": 403
+    },
+    {
+      "url": "https://artlist.io",
+      "code": 403
+    },
+    {
+      "url": "https://www.adobe.com/products/premiere.html",
+      "code": 403
+    },
+    {
+      "url": "https://www.notebook.ai",
+      "code": 403
+    },
+    {
+      "url": "https://www.worldanvil.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.flaticon.com",
+      "code": 403
+    },
+    {
+      "url": "https://boardgamegeek.com/forums/board/41/game-design",
+      "code": 403
+    },
+    {
+      "url": "https://www.commanderx16.com",
+      "code": 403
+    },
+    {
+      "url": "https://sourceforge.net/projects/acme-crossass/",
+      "code": 403
+    },
+    {
+      "url": "https://sdcc.sourceforge.net",
+      "code": 403
+    },
+    {
+      "url": "https://8bitworkshop.com",
+      "code": 403
+    },
+    {
+      "url": "https://vice-emu.sourceforge.io",
+      "code": 403
+    },
+    {
+      "url": "https://www.nesdev.org/wiki/",
+      "code": 403
+    },
+    {
+      "url": "https://www.midjourney.com",
+      "code": 403
+    },
+    {
+      "url": "https://leonardo.ai",
+      "code": 403
+    },
+    {
+      "url": "https://atariage.com/forums/",
+      "code": 403
+    },
+    {
+      "url": "http://libnoise.sourceforge.net",
+      "code": 403
+    },
+    {
+      "url": "https://wonderdynamics.com",
+      "code": 403
+    },
+    {
+      "url": "https://dev.epicgames.com/en-US/services",
+      "code": 403
+    },
+    {
+      "url": "https://steamdb.info",
+      "code": 403
+    },
+    {
+      "url": "https://store.epicgames.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.canva.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.newgrounds.com",
+      "code": 403
+    },
+    {
+      "url": "https://gamalytic.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html",
+      "code": 403
+    },
+    {
+      "url": "https://cppcheck.sourceforge.io",
+      "code": 403
+    },
+    {
+      "url": "https://developer.arm.com/Tools%20and%20Software/Arm%20Performance%20Studio",
+      "code": 403
+    },
+    {
+      "url": "https://nsis.sourceforge.io",
+      "code": 403
+    },
+    {
+      "url": "https://www.gnu.org/software/emacs/",
+      "code": 403
+    },
+    {
+      "url": "https://www.svgrepo.com",
+      "code": 429
+    },
+    {
+      "url": "https://www.vulkan.org",
+      "code": 403
+    },
+    {
+      "url": "https://www.w3.org/TR/webgpu/",
+      "code": 403
+    },
+    {
+      "url": "https://www.coursera.org",
+      "code": 403
+    },
+    {
+      "url": "https://www.realtimerendering.com",
+      "code": 403
+    },
+    {
+      "url": "https://academy.zenva.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.artstation.com",
+      "code": 403
+    },
+    {
+      "url": "https://polycount.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/gamedev/",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/godot/",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/roguelikedev/",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/Unity3D/",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/GraphicsProgramming/",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/pixelart/",
+      "code": 403
+    },
+    {
+      "url": "https://www.tigsource.com",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/IndieDev/",
+      "code": 403
+    },
+    {
+      "url": "https://www.reddit.com/r/unrealengine/",
+      "code": 403
+    },
+    {
+      "url": "https://globalgamejam.org",
+      "code": 403
+    },
+    {
+      "url": "https://www.autohotkey.com",
+      "code": 403
+    }
+  ],
+  "unverified": [
+    {
+      "url": "https://www.keymailer.co",
+      "detail": "timeout"
+    }
+  ],
+  "redirects": [
+    {
+      "url": "https://gamemaker.io",
+      "final_url": "https://gamemaker.io/en"
+    },
+    {
+      "url": "https://sentry.io",
+      "final_url": "https://sentry.io/welcome/"
+    },
+    {
+      "url": "https://bevyengine.org",
+      "final_url": "https://bevy.org/"
+    },
+    {
+      "url": "https://buildbox.com",
+      "final_url": "https://signup.buildbox.com/"
+    },
+    {
+      "url": "https://awesome.re",
+      "final_url": "https://github.com/sindresorhus/awesome#readme"
+    },
+    {
+      "url": "https://www.appgamekit.com",
+      "final_url": "https://darkbasic.com/home/appgamekit-studio/"
+    },
+    {
+      "url": "https://www.monogame.net",
+      "final_url": "https://monogame.net/"
+    },
+    {
+      "url": "https://textadventures.co.uk/quest",
+      "final_url": "https://questviva.com/"
+    },
+    {
+      "url": "https://api.arcade.academy",
+      "final_url": "https://api.arcade.academy/en/stable/"
+    },
+    {
+      "url": "https://gitlab.com/GrafX2/grafx2",
+      "final_url": "https://gitlab.com/GrafX2/grafX2"
+    },
+    {
+      "url": "https://www.articy.com",
+      "final_url": "https://www.articy.com/en/"
+    },
+    {
+      "url": "https://mypaint.app",
+      "final_url": "https://www.mypaint.app/"
+    },
+    {
+      "url": "https://www.escapemotions.com/products/rebelle/",
+      "final_url": "https://www.escapemotions.com/products/rebelle/about"
+    },
+    {
+      "url": "https://www.getpaint.net",
+      "final_url": "https://paint.net/"
+    },
+    {
+      "url": "https://graphite.rs",
+      "final_url": "https://graphite.art/"
+    },
+    {
+      "url": "https://affinity.serif.com/designer/",
+      "final_url": "https://www.affinity.studio/graphic-design-software"
+    },
+    {
+      "url": "https://affinity.serif.com/photo/",
+      "final_url": "https://www.affinity.studio/photo-editing-software"
+    },
+    {
+      "url": "https://www.clipstudio.net",
+      "final_url": "https://www.clipstudio.net/ja/"
+    },
+    {
+      "url": "https://free-tex-packer.com",
+      "final_url": "http://survey-twist.com/"
+    },
+    {
+      "url": "https://picular.co",
+      "final_url": "https://www.picular.co/"
+    },
+    {
+      "url": "https://github.com/shssoichiro/oxipng",
+      "final_url": "https://github.com/oxipng/oxipng"
+    },
+    {
+      "url": "https://www.snowb.org",
+      "final_url": "https://snowb.org/"
+    },
+    {
+      "url": "https://www.calligraphr.com",
+      "final_url": "https://www.calligraphr.com/en/"
+    },
+    {
+      "url": "https://www.live2d.com/en/cubism/",
+      "final_url": "https://www.live2d.com/en/cubism/about/"
+    },
+    {
+      "url": "https://imageoptim.com",
+      "final_url": "https://imageoptim.com/mac"
+    },
+    {
+      "url": "https://www.sketchup.com",
+      "final_url": "https://sketchup.trimble.com/en"
+    },
+    {
+      "url": "https://marmoset.co/toolbag/",
+      "final_url": "https://marmoset.co/"
+    },
+    {
+      "url": "https://knaldtech.com",
+      "final_url": "https://www.knaldtech.com/"
+    },
+    {
+      "url": "https://shadermap.com",
+      "final_url": "https://shadermap.com/home/"
+    },
+    {
+      "url": "https://www.foundry.com/products/modo",
+      "final_url": "https://www.foundry.com/news-and-awards/foundry-winds-down-modo-development"
+    },
+    {
+      "url": "https://quixel.com/mixer",
+      "final_url": "https://quixel.com/"
+    },
+    {
+      "url": "https://www.move.ai",
+      "final_url": "https://move.ai/"
+    },
+    {
+      "url": "https://www.movella.com",
+      "final_url": "https://www.xsens.com/"
+    },
+    {
+      "url": "https://plask.ai",
+      "final_url": "https://plask.ai/en-US"
+    },
+    {
+      "url": "https://www.minddesk.com",
+      "final_url": "https://foxel.io/"
+    },
+    {
+      "url": "https://shaderlabs.org",
+      "final_url": "https://shaderlabs.org/wiki/Main_Page"
+    },
+    {
+      "url": "http://www.wings3d.com",
+      "final_url": "https://www.wings3d.com/"
+    },
+    {
+      "url": "https://blendermarket.com/products/auto-rig-pro",
+      "final_url": "https://superhivemarket.com/products/auto-rig-pro"
+    },
+    {
+      "url": "http://glslsandbox.com",
+      "final_url": "https://glslsandbox.com/"
+    },
+    {
+      "url": "https://unity.com/features/probuilder",
+      "final_url": "https://docs.unity3d.com/Packages/com.unity.probuilder@6.0/manual/index.html"
+    },
+    {
+      "url": "https://unity.com/visual-effect-graph",
+      "final_url": "https://unity.com/features/graphics"
+    },
+    {
+      "url": "https://www.flowscape.se",
+      "final_url": "https://flowscapesolutions.com/"
+    },
+    {
+      "url": "https://www.wonderdraft.net",
+      "final_url": "https://wonderdraft.net/"
+    },
+    {
+      "url": "https://www.world-creator.com",
+      "final_url": "https://www.world-creator.com/en/index.phtml"
+    },
+    {
+      "url": "https://musescore.org",
+      "final_url": "https://musescore.org/en"
+    },
+    {
+      "url": "https://www.portaudio.com",
+      "final_url": "https://portaudio.com/"
+    },
+    {
+      "url": "https://puredata.info",
+      "final_url": "https://puredata.info/.within.website/?redir=/"
+    },
+    {
+      "url": "https://cgbookcase.com",
+      "final_url": "https://www.cgbookcase.com/"
+    },
+    {
+      "url": "https://www.izotope.com/en/products/rx.html",
+      "final_url": "https://www.izotope.com/products/rx-advanced"
+    },
+    {
+      "url": "https://www.criware.com/en/products/adx2.html",
+      "final_url": "https://game.criware.com/criware-products#adx"
+    },
+    {
+      "url": "https://legendkeeper.com",
+      "final_url": "https://www.legendkeeper.com/"
+    },
+    {
+      "url": "https://cavalry.scenegroup.co",
+      "final_url": "https://cavalry.studio/en/"
+    },
+    {
+      "url": "https://www.jitter.video",
+      "final_url": "https://jitter.video/"
+    },
+    {
+      "url": "https://docs.unity3d.com/Manual/com.unity.timeline.html",
+      "final_url": "https://docs.unity.com/en-us/engine/6000.6/manual/packages-list/packages-all/pack-core/com-unity-timeline"
+    },
+    {
+      "url": "https://www.deepl.com",
+      "final_url": "https://www.deepl.com/en"
+    },
+    {
+      "url": "https://www.sudowrite.com",
+      "final_url": "https://sudowrite.com/"
+    },
+    {
+      "url": "https://sheets.google.com",
+      "final_url": "https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-801640740:1793528918913210"
+    },
+    {
+      "url": "https://tldraw.com",
+      "final_url": "https://www.tldraw.com/"
+    },
+    {
+      "url": "https://zxbasic.readthedocs.io",
+      "final_url": "https://zxbasic.readthedocs.io/en/latest/"
+    },
+    {
+      "url": "https://boardgamearena.com",
+      "final_url": "https://en.boardgamearena.com/"
+    },
+    {
+      "url": "https://invoke-ai.github.io/InvokeAI/",
+      "final_url": "http://invoke.ai/"
+    },
+    {
+      "url": "https://www.comfy.org",
+      "final_url": "https://comfy.org/"
+    },
+    {
+      "url": "https://www.stableaudio.com",
+      "final_url": "https://stableaudio.com/"
+    },
+    {
+      "url": "https://www.layer.ai",
+      "final_url": "https://layer.ai/"
+    },
+    {
+      "url": "https://z88dk.org",
+      "final_url": "https://z88dk.org/site/"
+    },
+    {
+      "url": "https://unity.com/products/muse",
+      "final_url": "https://unity.com/features/ai"
+    },
+    {
+      "url": "https://unity.com/products/sentis",
+      "final_url": "https://unity.com/features/ai"
+    },
+    {
+      "url": "https://developer.nvidia.com/ace",
+      "final_url": "https://developer.nvidia.com/ace-for-games"
+    },
+    {
+      "url": "https://runwayml.com",
+      "final_url": "https://runway.com/"
+    },
+    {
+      "url": "https://www.riffusion.com",
+      "final_url": "https://www.flowmusic.app/"
+    },
+    {
+      "url": "https://agones.dev",
+      "final_url": "https://agones.dev/site/"
+    },
+    {
+      "url": "https://metaplay.io",
+      "final_url": "https://www.metaplay.io/"
+    },
+    {
+      "url": "https://hathora.dev",
+      "final_url": "https://gamefabric.com/"
+    },
+    {
+      "url": "https://discord.com/developers/docs/developer-tools/game-sdk",
+      "final_url": "https://docs.discord.com/developers/developer-tools/game-sdk"
+    },
+    {
+      "url": "https://docs-multiplayer.unity3d.com",
+      "final_url": "https://docs.unity.com/en-us/engine/6000.6/manual/multiplayer"
+    },
+    {
+      "url": "https://gameanalytics.com",
+      "final_url": "https://www.gameanalytics.com/"
+    },
+    {
+      "url": "https://mixpanel.com",
+      "final_url": "https://mixpanel.com/home/"
+    },
+    {
+      "url": "https://rivet.gg",
+      "final_url": "https://rivet.dev/"
+    },
+    {
+      "url": "https://getbraincloud.com",
+      "final_url": "https://www.getbraincloud.com/"
+    },
+    {
+      "url": "https://docs.unity.com/ugs/en-us/manual/remote-config/manual",
+      "final_url": "https://docs.unity.com/en-us/remote-config"
+    },
+    {
+      "url": "https://vginsights.com",
+      "final_url": "https://app.sensortower.com:443/vgi/"
+    },
+    {
+      "url": "https://admob.google.com",
+      "final_url": "https://admob.google.com/home/"
+    },
+    {
+      "url": "https://docs.unity.com/ugs/en-us/manual/cloud-diagnostics/manual",
+      "final_url": "https://docs.unity.com/en-us/cloud-diagnostics"
+    },
+    {
+      "url": "https://www.applovin.com/max/",
+      "final_url": "https://www.applovin.com/en"
+    },
+    {
+      "url": "https://play.google.com/console",
+      "final_url": "https://google.play/business/"
+    },
+    {
+      "url": "https://apps.microsoft.com",
+      "final_url": "https://apps.microsoft.com/?hl=en-US&gl=US"
+    },
+    {
+      "url": "https://lumalabs.ai/dream-machine",
+      "final_url": "https://lumalabs.ai/app"
+    },
+    {
+      "url": "https://www.kongregate.com",
+      "final_url": "https://www.kongregate.com/en"
+    },
+    {
+      "url": "https://www.wholesomegames.com",
+      "final_url": "https://wholesomegames.com/"
+    },
+    {
+      "url": "https://gamedriver.io",
+      "final_url": "https://gamedriver.ai/"
+    },
+    {
+      "url": "https://www.gog.com",
+      "final_url": "https://www.gog.com/en/"
+    },
+    {
+      "url": "https://indiemegabooth.com",
+      "final_url": "https://www.indiemegabooth.com/"
+    },
+    {
+      "url": "https://www.dayofthedevs.com",
+      "final_url": "https://www.dayofthedevs.org/"
+    },
+    {
+      "url": "https://www.xbox.com/en-US/developers",
+      "final_url": "https://developer.microsoft.com/en-US/games/partner"
+    },
+    {
+      "url": "https://docs.unity3d.com/Packages/com.unity.test-framework@latest",
+      "final_url": "https://docs.unity3d.com:443/Packages/com.unity.test-framework@latest/"
+    },
+    {
+      "url": "https://developer.qualcomm.com/software/snapdragon-profiler",
+      "final_url": "https://www.qualcomm.com/developer/software/snapdragon-profiler?redirect=qdn"
+    },
+    {
+      "url": "https://buildkite.com",
+      "final_url": "https://buildkite.com/home/"
+    },
+    {
+      "url": "https://www.gitkraken.com",
+      "final_url": "https://gitkraken.com/"
+    },
+    {
+      "url": "https://desktop.github.com",
+      "final_url": "https://github.com/apps/desktop"
+    },
+    {
+      "url": "https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/",
+      "final_url": "https://about.gitlab.com/solutions/continuous-integration/"
+    },
+    {
+      "url": "https://www.perforce.com/products/helix-core",
+      "final_url": "https://www.perforce.com/products/p4"
+    },
+    {
+      "url": "https://unity.com/solutions/version-control",
+      "final_url": "https://unity.com/features/version-control"
+    },
+    {
+      "url": "https://docs.unity3d.com/Manual/Profiler.html",
+      "final_url": "https://docs.unity.com/en-us/engine/6000.6/manual/analysis/profiler"
+    },
+    {
+      "url": "https://wixtoolset.org",
+      "final_url": "https://www.firegiant.com/wixtoolset/"
+    },
+    {
+      "url": "https://www.continue.dev",
+      "final_url": "https://continue.dev/"
+    },
+    {
+      "url": "https://windsurf.com",
+      "final_url": "https://devin.ai/desktop"
+    },
+    {
+      "url": "https://www.anthropic.com/claude-code",
+      "final_url": "https://claude.com/product/claude-code"
+    },
+    {
+      "url": "https://developer.valvesoftware.com/wiki/SteamCMD",
+      "final_url": "https://developer.valvesoftware.com/.within.website/?redir=https://developer.valvesoftware.com/wiki/SteamCMD"
+    },
+    {
+      "url": "https://jqlang.github.io/jq/",
+      "final_url": "https://jqlang.org/"
+    },
+    {
+      "url": "https://www.tabnine.com",
+      "final_url": "https://www.tricentis.com/products?utm_source=www.tabnine.com&utm_medium=referral&utm_campaign=redirect"
+    },
+    {
+      "url": "https://piqnt.com/planck.js/",
+      "final_url": "https://piqnt.com/planck.js/docs/index.html"
+    },
+    {
+      "url": "https://docs.unity3d.com/Packages/com.unity.localization@latest",
+      "final_url": "https://docs.unity3d.com:443/Packages/com.unity.localization@latest/"
+    },
+    {
+      "url": "https://weblate.org",
+      "final_url": "https://weblate.org/en/"
+    },
+    {
+      "url": "https://docs.godotengine.org",
+      "final_url": "https://docs.godotengine.org/en/stable/"
+    },
+    {
+      "url": "https://www.gamedev.tv",
+      "final_url": "https://gamedev.tv/"
+    },
+    {
+      "url": "https://handmadehero.org",
+      "final_url": "https://mollyrocket.com/#handmade"
+    },
+    {
+      "url": "https://www.sphinx-doc.org",
+      "final_url": "https://www.sphinx-doc.org/en/master/"
+    },
+    {
+      "url": "https://www.gamedev.net",
+      "final_url": "https://gamedev.net/"
+    },
+    {
+      "url": "https://readthedocs.org",
+      "final_url": "https://about.readthedocs.com/?ref=app.readthedocs.org"
+    },
+    {
+      "url": "https://procjam.com",
+      "final_url": "https://www.procjam.com/"
+    },
+    {
+      "url": "https://wayofthepixel.net",
+      "final_url": "https://pixelation.org/"
+    },
+    {
+      "url": "https://www.screentogif.com",
+      "final_url": "https://nicke.tech/n-studio?migrated=true"
+    },
+    {
+      "url": "https://eigen.tuxfamily.org",
+      "final_url": "https://libeigen.gitlab.io/"
+    },
+    {
+      "url": "https://github.com/godotengine/awesome-godot",
+      "final_url": "https://github.com/Calinou/awesome-godot"
+    },
+    {
+      "url": "https://github.com/GameDev-Toolkit/awesome-GameDev-tool/issues/new?title=Dead%20link:%20",
+      "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FGameDev-Toolkit%2Fawesome-GameDev-tool%2Fissues%2Fnew%3Ftitle%3DDead%2520link%3A%2520"
+    },
+    {
+      "url": "https://github.com/GameDev-Toolkit/awesome-GameDev-tool/issues/new?title=Add:%20",
+      "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FGameDev-Toolkit%2Fawesome-GameDev-tool%2Fissues%2Fnew%3Ftitle%3DAdd%3A%2520"
+    }
+  ]
+}
