@@ -1,0 +1,31 @@
+name: Broken or outdated link
+description: Report a link that is dead, moved or no longer relevant
+title: "Dead link: "
+labels: ["broken link"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: The link as it appears in the list
+      placeholder: https://example.com
+    validations:
+      required: true
+
+  - type: input
+    id: replacement
+    attributes:
+      label: Replacement link (if you know it)
+      placeholder: https://example.com/new-page
+
+  - type: input
+    id: location
+    attributes:
+      label: Where is it?
+      description: Section name, or the line from the list.
+      placeholder: 3.1 Pixel Art Editors
+
+  - type: textarea
+    id: details
+    attributes:
+      label: What happens when you open it?
+      placeholder: Returns 404, or the project was archived in 2024.
