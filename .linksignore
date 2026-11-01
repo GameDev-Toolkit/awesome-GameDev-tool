@@ -1,0 +1,18 @@
+# .linksignore — links the checker should skip.
+#
+# Format:  <pattern>    # reason
+#   * matches anything, the pattern is also matched as a plain substring.
+#   Always put the reason after " # " — maintainers review these.
+#
+# Use this file only for links that are alive but refuse automated clients
+# (Cloudflare, login walls) or for pages that are intentionally offline
+# (archived projects kept for historical reasons).
+#
+# Examples (not active):
+#
+# https://example.com/*                        # Cloudflare blocks automated clients, verified 2026-10
+# https://old-tool.example.org                 # site is offline, kept because the source is mirrored on GitHub
+
+# --- verified exceptions -----------------------------------------------------
+
+https://godotshaders.com*   # site is alive (verified 2026-10), but its WAF answers automated clients with a non-standard 454
