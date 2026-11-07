@@ -1533,10 +1533,14 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 
 This list is only as good as the community behind it. Found a missing tool? A better alternative? A dead link?
 
-1. Read **[CONTRIBUTING.md](CONTRIBUTING.md)** — it takes two minutes.
+**No issue needed — just open a pull request.** One line is enough, and CI checks your link for you.
+
+1. Open [README.md](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/blob/main/README.md) and click the ✏️ pencil icon — GitHub forks the repo for you.
 2. Add your entry **in alphabetical order** inside the right subsection.
 3. Keep the format: `- **[Name](https://link)** – What it does, in one sentence. \`TAG\``
-4. Open a pull request. CI will check every link for you.
+4. Commit and open a pull request. If the formatting is slightly off, we will fix it in review.
+
+More detail, if you want it: **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
 > Please don't add affiliate links, link shorteners or tools you haven't actually used or verified.
 
