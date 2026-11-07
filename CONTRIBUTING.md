@@ -4,7 +4,7 @@
 
 # Contributing to awesome-GameDev-tool
 
-**One good tool you love is worth more than ten random links.**
+**Found something missing or broken? Open a pull request — that is the whole process.**
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/pulls)
 [![Link check](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/actions/workflows/link-check.yml/badge.svg)](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/actions/workflows/link-check.yml)
@@ -13,65 +13,65 @@
 
 </div>
 
-Thanks for helping out! This list only stays useful because people like you fix dead links,
-add the tool that saved their project, and argue politely about categories.
+You do **not** need to open an issue first, and you do not need to ask anyone. If you know the
+tool and you have the link, you know enough to send a PR. A maintainer reviews it, fixes the small
+stuff if needed, and merges.
 
-There are three ways to contribute, in ascending order of effort:
+## The 2-minute version
 
-| I want to… | Do this |
+1. Open [README.md](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/blob/main/README.md)
+   and click the ✏️ pencil icon ("Edit this file"). GitHub forks the repo for you.
+2. Press `Ctrl+F`, find the right subsection, and add **one line** in alphabetical order.
+3. Click **Commit changes**, then **Create a new branch for this commit and start a pull request**.
+
+That's it. CI checks your link automatically, and a maintainer merges it. If the line is not
+perfect, we will polish it in review — bad formatting is never a reason to close a PR.
+
+## The entry format
+
+One line per entry, alphabetised inside its subsection:
+
+```markdown
+- **[Name](https://example.com)** – One sentence about what it does and who it is for. `TAG`
+```
+
+Real example:
+
+```markdown
+- **[Aseprite](https://www.aseprite.org)** – The industry favourite: layers, onion skin, tags, tilesets and a powerful CLI. `PAID` `OSS`
+```
+
+**Good:**
+
+```markdown
+- **[LDtk](https://ldtk.io)** – Modern, friendly level editor with auto-layers, entities and a JSON format. `OSS` `FREE`
+```
+
+**Not good:**
+
+- `- [SuperTool](https://supertool.io) — tool` — no bold, no tags, says nothing.
+- `- **[SuperTool](https://supertool.io)** – The best engine ever!!` — hype instead of facts.
+- `- **[SuperTool](https://supertool.io?ref=me)** – ...` — tracking parameter.
+
+The details: en dash `–` between name and description (not a hyphen), one factual sentence of
+about 120 characters or less, no marketing words, tags in backticks at the end.
+
+## Tags
+
+| Tag | When to use it |
 | :-- | :-- |
-| Report a dead or wrong link | [Open an issue](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/issues/new?title=Dead%20link:%20) with the URL |
-| Suggest a tool quickly | [Open an issue](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/issues/new?title=Add:%20) — someone will turn it into a PR |
-| Add it yourself | Follow this guide and open a pull request (2 minutes, promise) |
+| `OSS` | Source code is public (GitHub, GitLab, SourceForge…) and it can be built |
+| `FREE` | Free to use, but closed source |
+| `FREEMIUM` | Free tier exists, paid plans or royalties for more |
+| `PAID` | Requires payment (one-time or subscription) |
+| `WEB` | Runs in the browser, nothing to install |
+| `AI` | Uses generative AI |
 
-## Contents
+Not sure? Leave them off — a maintainer will add them. A wrong tag is worse than no tag.
 
-- [What belongs here](#what-belongs-here)
-- [What does not belong here](#what-does-not-belong-here)
-- [Where to put your entry](#where-to-put-your-entry)
-- [The entry format](#the-entry-format)
-- [Tags and the legend](#tags-and-the-legend)
-- [Link rules](#link-rules)
-- [Add an entry: step by step](#add-an-entry-step-by-step)
-- [Adding a whole new category](#adding-a-whole-new-category)
-- [Check your links locally](#check-your-links-locally)
-- [Pull request checklist](#pull-request-checklist)
-- [Review and merge](#review-and-merge)
-- [Code of conduct](#code-of-conduct)
+## Where does the entry go?
 
-<img src="image/line-svg-3D444D-alg.svg" alt="" width="100%">
-
-## What belongs here
-
-A tool, service, library, portal or resource that a game developer would realistically
-use **while making a game**:
-
-- engines, frameworks and libraries
-- art, audio, animation and level-design software
-- asset libraries and marketplaces
-- QA, profiling, CI and version control
-- backend, analytics, monetization and publishing services
-- learning resources, communities, jams and reference material
-
-The tool should be **useful to more than one person**, **still maintained or still working**,
-and **reachable without an invite-only beta**.
-
-## What does not belong here
-
-- ❌ Your own unreleased product with a landing page and no download
-- ❌ Abandoned tools whose site no longer resolves (see [link rules](#link-rules))
-- ❌ Affiliate, referral or tracked links (`?ref=`, `utm_*`, shorteners like `bit.ly`)
-- ❌ Link farms, SEO listicles, or "top 10 tools" articles
-- ❌ Paid courses disguised as free resources
-- ❌ Anything NSFW, pirated, or of unclear legal status (asset rips are a grey area — see below)
-- ❌ Duplicates: search the README first (`Ctrl+F` on the tool name and on the domain)
-
-> **Asset rips:** sites like The Models Resource are useful for study and reverse engineering,
-> but the assets are not licensed for shipping. If you add such a site, say so in the description.
-
-## Where to put your entry
-
-Find the section that matches what the tool *is*, not what it is *made with*:
+Put it under the section matching what the tool **is**, not what it is made with:
 
 | The tool is… | Section |
 | :-- | :-- |
@@ -100,209 +100,82 @@ Find the section that matches what the tool *is*, not what it is *made with*:
 | Forums, news, game jams | [23. Communities, News and Game Jams](README.md#23-communities-news-and-game-jams) |
 | Generic dev utilities | [24. Everyday Utilities](README.md#24-everyday-utilities) |
 
-If two sections fit, pick the one a reader would search first, and **only add it once**.
+Two sections fit? Pick the one a reader would search first, and add it **only once**.
 
-## The entry format
+## What belongs here
 
-Every entry is a single line, alphabetised inside its subsection:
+A tool, service, library, portal or resource a game developer would realistically use **while
+making a game** — engines and libraries, art/audio/animation software, asset stores, QA and CI,
+backend and monetization services, learning resources and communities.
 
-```markdown
-- **[Name](https://example.com)** – One sentence about what it does and who it is for. `TAG`
-```
+It should be useful to more than one person, still working, and reachable without an invite-only
+beta.
 
-Real example:
+**Please don't add:** unreleased products with only a landing page, links to articles *about* a
+tool instead of the tool, link farms and "top 10 tools" listicles, paid courses dressed up as free
+resources, duplicates (search the name and the domain first), or anything NSFW, pirated or of
+unclear legal status.
 
-```markdown
-- **[Aseprite](https://www.aseprite.org)** – The industry favourite: layers, onion skin, tags, tilesets and a powerful CLI. `PAID` `OSS`
-```
-
-Rules for the line:
-
-1. **`- `** then the name in `**[Name](url)**` — bold and linked.
-2. Use an **en dash** `–` (not a hyphen `-`) between name and description.
-3. Description: **one sentence, max ~120 characters**, sentence case, no trailing period rules —
-   just be consistent with the neighbours (descriptions here end with a period).
-4. No marketing fluff ("revolutionary", "best-in-class", "game-changing").
-   Say what it *does*: "Node-based procedural texture generator for Godot".
-5. End with tags in backticks, separated by spaces: `` `OSS` `FREE` ``.
-6. Keep the line under ~200 characters so it stays readable in diffs.
-
-### Good vs. not good
-
-| ✅ Good | ❌ Why not |
-| :-- | :-- |
-| `- **[LDtk](https://ldtk.io)** – Modern, friendly level editor with auto-layers, entities and a JSON format. \`OSS\` \`FREE\`` | — |
-| `- **[SuperTool](https://supertool.io)** – The best game engine!!` | Hype instead of facts, no tags |
-| `- [SuperTool](https://supertool.io) — tool` | No bold, no tags, three-word description |
-| `- **[SuperTool](https://supertool.io?ref=me)** – ...` | Referral parameter |
-
-## Tags and the legend
-
-Use these exact tags — they match the [legend in the README](README.md#legend):
-
-| Tag | When to use it |
-| :-- | :-- |
-| `OSS` | Source code is public (GitHub, GitLab, SourceForge…) and it can be built |
-| `FREE` | Free to use, but closed source |
-| `FREEMIUM` | Free tier/version exists, paid plans or royalties for more |
-| `PAID` | Requires payment (one-time or subscription) |
-| `WEB` | Runs in the browser, nothing to install |
-| `AI` | Uses generative AI |
-
-Not sure? Leave the tags off — a maintainer will add them. A wrong tag is worse than no tag.
+> **Asset rips:** sites like The Models Resource are handy for study, but their assets are not
+> licensed for shipping. If you add one, say so in the description.
 
 ## Link rules
 
-CI checks every link, but please do your part:
-
-1. **HTTPS, canonical URL.** Use `https://godotengine.org`, not `https://godotengine.org/download/linux/`
-   or a redirecting `http://` version.
-2. **Link to the thing itself**, not to an article about it, not to a Google search result.
-3. **Prefer the official site**; for open-source projects a GitHub/GitLab **repository** is fine
-   (and often more stable than a marketing site).
-4. **No dead links.** Open the URL in a private window before submitting. If it 404s, don't add it.
-5. **No URL shorteners or tracking parameters** (`utm_*`, `?ref=`, `fbclid`, `gclid`).
-6. **Platform stores are acceptable** for games/tools that only exist there (e.g. an itch.io app),
-   but point at the store page, not an affiliate link.
-7. **Anchors are fine** if the target section exists (`https://example.com/docs#install`).
-
-If a link is alive but blocks bots (Cloudflare, login walls), add it to
-[`.linksignore`](.linksignore) **with a reason** in the same PR:
+1. **HTTPS, canonical URL** — `https://godotengine.org`, not a `/download/linux/` subpage or a
+   redirecting `http://` version.
+2. **Link to the thing itself**, not to an article about it and not to a search result.
+3. **Official site first**; for open-source projects the repository is fine and often more stable.
+4. **No dead links** — open it in a private window before submitting.
+5. **No shorteners, no tracking** (`utm_*`, `?ref=`, `fbclid`, `gclid`, `bit.ly`).
+6. If the site is alive but blocks bots (Cloudflare, login wall), add it to
+   [`.linksignore`](.linksignore) **with a reason** in the same PR:
 
 ```
 https://example.com/*    # Cloudflare blocks automated clients, verified by hand 2026-10
 ```
 
-## Add an entry: step by step
-
-### 1. Fork and clone
+## Prefer the terminal?
 
 ```bash
 gh repo fork GameDev-Toolkit/awesome-GameDev-tool --clone
 cd awesome-GameDev-tool
 git checkout -b add-my-tool
-```
-
-<details>
-<summary>No <code>gh</code>? Use the web UI instead</summary>
-
-1. Open [README.md](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/blob/main/README.md).
-2. Click the ✏️ pencil icon ("Edit this file").
-3. GitHub forks the repository for you automatically.
-4. Make your change, then choose **Create a new branch for this commit and start a pull request**.
-
-</details>
-
-### 2. Find the right subsection
-
-Open `README.md`, press `Ctrl+F`, and search for a nearby tool to find the right block.
-Sections look like this:
-
-```markdown
-### 3.1 Pixel Art Editors
-
-- **[Aseprite](https://www.aseprite.org)** – ...
-- **[LibreSprite](https://libresprite.github.io)** – ...
-```
-
-### 3. Insert your line alphabetically
-
-Ignore case and punctuation when sorting; `**` and `[` don't count.
-
-```diff
- - **[GraphicsGale](https://graphicsgale.com/us/)** – Long-standing pixel and animation editor, now freeware. `FREE`
-+- **[LibreSprite](https://libresprite.github.io)** – Free fork of the last open-source Aseprite, actively maintained. `OSS` `FREE`
- - **[Pixelorama](https://github.com/Orama-Interactive/Pixelorama)** – Free, cross-platform pixel editor with animation and infinite canvas. `OSS` `FREE`
-```
-
-### 4. Check that your change is clean
-
-```bash
-git diff                     # one added line, nothing else
-python3 scripts/check_links.py README.md
-```
-
-### 5. Commit and push
-
-```bash
+# edit README.md
+python3 scripts/check_links.py README.md   # optional, needs Python 3.9+, no dependencies
 git commit -am "Add LibreSprite to pixel art editors"
 git push -u origin add-my-tool
 gh pr create --fill
 ```
 
-Write the PR title as `Add <Tool>` or `Fix <what>`. In the description, tell us **why** you like
-the tool — one or two sentences is plenty.
+Name the PR `Add <Tool>` or `Fix <what>`, and tell us in one or two sentences **why** you like the
+tool. Personal experience beats a feature list.
 
-## Adding a whole new category
+## A whole new category?
 
-New top-level categories are welcome, but they need to earn their place:
-
-1. There are **at least 5–8 solid entries** that don't fit anywhere else.
-2. It gets a number, a title, and a one-line blockquote intro, in the same style as the others.
-3. It is added in the right place in the **Contents** list and in **CONTRIBUTING.md's section map**
-   (this file), otherwise the two documents drift apart.
-4. Use `## N. Title` for the category and `### N.M Subtitle` for subsections.
-5. Match the existing order: sections run roughly along the production pipeline
-   (engines → art → audio → design → tech → business → learning).
-
-## Check your links locally
-
-The repository ships with a dependency-free checker:
-
-```bash
-python3 scripts/check_links.py                 # everything
-python3 scripts/check_links.py README.md       # just the list
-python3 scripts/check_links.py --jobs 32       # faster (be kind to small sites)
-python3 scripts/check_links.py --list          # show URLs without checking
-python3 scripts/check_links.py --fail-on-blocked --report report.md
-```
-
-Requires **Python 3.9+**. It reports:
-
-- **BROKEN** — 404, 410, DNS failure, TLS failure after retries → must be fixed
-- **BLOCKED** — 401/403/429 (`refusing bots`) → not necessarily dead, verify by hand
-- **UNVERIFIED** — timed out twice, or the network died → usually a slow host, worth checking by hand
-- **REDIRECTS** — works, but the canonical URL moved → nice to update
-
-Failures are automatically re-checked before they are reported, so one slow host will not
-turn a PR red. Use `--fail-on-unverified` if you want network-level failures to fail the run too.
-
-Exit code is `1` if anything is broken, so you can wire it into your own pre-commit hook:
-
-```bash
-printf '#!/bin/sh\npython3 scripts/check_links.py README.md\n' > .git/hooks/pre-push
-chmod +x .git/hooks/pre-push
-```
-
-## Pull request checklist
-
-Copy this into your PR description:
-
-```markdown
-- [ ] The tool is new (searched the list for its name and domain)
-- [ ] It is in the correct section and alphabetical position
-- [ ] The line follows the format: `- **[Name](url)** – Description. \`TAG\``
-- [ ] The link is HTTPS, canonical, and opens in a private window
-- [ ] No affiliate/tracking parameters, no URL shorteners
-- [ ] Description is one factual sentence, no marketing language
-- [ ] `python3 scripts/check_links.py README.md` passes
-- [ ] I have used this tool (or verified it works today)
-```
+Welcome, if it earns its place: at least **5–8 solid entries** that fit nowhere else. Use
+`## N. Title` and `### N.M Subtitle`, add it in pipeline order (engines → art → audio → design →
+tech → business → learning), and mention it in the PR — we will handle numbering and the table of
+contents together with you.
 
 ## Review and merge
 
-- A maintainer reviews PRs **weekly** (usually much faster).
+- A maintainer reviews PRs **weekly**, usually much faster.
 - CI (`link-check`) runs on every PR and must pass.
-- Small, focused PRs are merged quickly. A PR that reformats 300 lines will be asked to split.
-- If your PR goes quiet for more than two weeks, ping it with a comment — no hard feelings.
+- Small, focused PRs merge quickly; a PR that reformats 300 lines will be asked to split.
+- No news for two weeks? Ping it with a comment — no hard feelings.
+- We may tweak your description, tags or position. That is normal, not a rejection.
 
-We may edit your description for tone, tags or position. That's normal and not a rejection.
+## Not ready to open a PR?
+
+That's fine. [Open an issue](https://github.com/GameDev-Toolkit/awesome-GameDev-tool/issues/new/choose)
+with the tool or the dead link and someone will turn it into a PR. But honestly — editing one line
+on GitHub is less work than writing an issue.
 
 ## Code of conduct
 
 Be decent to each other. Harassment, gatekeeping and "just learn to code" snark are not welcome.
-Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Maintainers may remove comments, commits
-or contributions that violate it.
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Maintainers may remove comments, commits or
+contributions that violate it.
 
 <div align="center">
 
