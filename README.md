@@ -1100,6 +1100,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 
 ### 17.1 Testing and QA Automation
 
+- **[agent-qa](https://github.com/vostride/agent-qa)** – Plain-language AI UI tests for web, Android and iOS, with screenshot evidence and persistent app memory. `OSS` `AI`
 - **[AltTester](https://alttester.com)** – Open-source UI test automation for Unity games. `FREEMIUM`
 - **[AWS Device Farm](https://aws.amazon.com/device-farm/)** – Cloud device farm for mobile and web app testing. `PAID`
 - **[BrowserStack](https://www.browserstack.com)** – Cross-browser and device testing for web games. `PAID`
