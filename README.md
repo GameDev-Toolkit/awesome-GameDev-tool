@@ -237,6 +237,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[LibreSprite](https://libresprite.github.io)** – Free fork of the last open-source Aseprite, actively maintained. `OSS` `FREE`
 - **[Piskel](https://www.piskelapp.com)** – Dead-simple browser pixel editor and sprite animator. `OSS` `FREE` `WEB`
 - **[Pixel Composer](https://github.com/Ttanasart-pt/Pixel-Composer)** – Node-based procedural tool for generating and animating pixel art. `OSS` `FREE`
+- **[PixelArtHive](https://pixelarthive.com/)** – Convert images to pixel art on a controlled grid and scale sprites without blur; processing stays in the browser. `FREE` `WEB`
 - **[Pixelorama](https://github.com/Orama-Interactive/Pixelorama)** – Free, cross-platform pixel editor with animation and infinite canvas. `OSS` `FREE`
 - **[PixelOver](https://pixelover.io)** – Turn 3D renders, videos and high-res art into animated pixel art. `PAID`
 - **[Pro Motion NG](https://www.cosmigo.com/)** – Deep pixel-art tool with advanced dithering, shading and tile tools. `PAID`
