@@ -480,6 +480,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 
 ### 6.1 2D Tilemap and Level Editors
 
+- **[Border Kit for Tiled](https://frenkitchio.itch.io/border-kit-for-tiled)** – Python CLI to extrude PNG tilesets and update external TSX files while preserving tile IDs and metadata. `PAID`
 - **[Dungeon Scrawl](https://www.dungeonscrawl.com)** – Fast browser tool for drawing dungeon maps and exporting images. `FREE` `WEB`
 - **[LDtk](https://ldtk.io)** – Modern, friendly level editor with auto-layers, entities and a JSON format. `OSS` `FREE`
 - **[OGMO Editor 3](https://ogmo-editor-3.github.io)** – Lightweight, highly customisable level editor with custom entity exports. `OSS` `FREE`
