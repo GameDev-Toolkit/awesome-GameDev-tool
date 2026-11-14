@@ -318,6 +318,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[CloudConvert](https://cloudconvert.com)** – Converts almost any asset format, with an API for automation. `FREEMIUM` `WEB`
 - **[Compressonator](https://gpuopen.com/compressonator/)** – AMD's texture compression and analysis suite (BCn, ASTC, ETC). `OSS` `FREE`
 - **[crunch](https://github.com/richgel999/crunch)** – Advanced lossy texture compression for DXT/ETC. `OSS` `FREE`
+- **[DDS Tools](https://ddstools.com/)** - View DDS textures and convert images to and from DDS locally in the browser. `FREEMIUM` `WEB`
 - **[ezgif](https://ezgif.com)** – Browser toolkit for GIF, APNG and WebP conversion and trimming. `FREE` `WEB`
 - **[gifsicle](https://www.lcdf.org/gifsicle/)** – Command-line GIF optimiser and manipulator. `OSS` `FREE`
 - **[GraphicsMagick](http://www.graphicsmagick.org)** – Lighter, faster ImageMagick fork favoured for batch jobs. `OSS` `FREE`
