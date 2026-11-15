@@ -1090,6 +1090,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[IGF](https://igf.com)** – Independent Games Festival — the most prestigious indie award entry. `PAID` `WEB`
 - **[Indie MEGABOOTH](https://indiemegabooth.com)** – Collective booth presence at major conventions. `PAID` `WEB`
 - **[Keymailer](https://www.keymailer.co)** – Distribute keys to verified content creators. `FREEMIUM` `WEB`
+- **[Ora Playables](https://lyp1314.github.io/playable-ads-portfolio/)** – Three HTML5 playable ad templates (~25 KB). Pay USDT on BNB Chain and get a file with your store link already wired in. `PAID` `WEB`
 - **[presskit()](https://dopresskit.com)** – Free, proven structure for a press kit that journalists actually use. `FREE` `WEB`
 - **[Steam Next Fest](https://store.steampowered.com/sale/nextfest)** – Valve's demo festival; the biggest wishlist driver for indies. `FREE` `WEB`
 - **[Wholesome Games](https://www.wholesomegames.com)** – Showcase and community for cozy, wholesome titles. `FREE` `WEB`
