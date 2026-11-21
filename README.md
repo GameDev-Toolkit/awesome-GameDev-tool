@@ -1075,6 +1075,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Kongregate](https://www.kongregate.com)** – Web game portal and community. `FREE`
 - **[Microsoft Store](https://apps.microsoft.com)** – Windows and Xbox PC distribution channel. `FREE`
 - **[Newgrounds](https://www.newgrounds.com)** – Legendary web game portal with an enthusiastic audience. `FREE`
+- **[neme.world](https://neme.world)** – Publish static web games with versioned URLs, rollback and playtest reports. `FREE` `WEB`
 - **[Nintendo Developer Portal](https://developer.nintendo.com)** – Official path to Switch development and publishing. `FREE`
 - **[PlayStation Partners](https://partners.playstation.net)** – PlayStation development and certification portal. `FREE`
 - **[Poki](https://developers.poki.com)** – Large web game platform with revenue share and SDK. `FREEMIUM`
