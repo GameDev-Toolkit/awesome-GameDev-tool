@@ -575,6 +575,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 
 - **[99Sounds](https://99sounds.org)** – Curated free sample packs for sound designers. `FREE`
 - **[BBC Sound Effects](https://sound-effects.bbcrewind.co.uk)** – Thousands of BBC archive recordings, free for personal and educational use. `FREE` `WEB`
+- **[DailySounds](https://dailysounds.org/sounds)** – Free SFX library for games and video, from UI clicks to footsteps and ambience; MP3, WAV or OGG, no account. `FREE` `WEB`
 - **[Freesound](https://freesound.org)** – Enormous community library of CC-licensed recordings. `FREE` `WEB`
 - **[Kenney Audio](https://kenney.nl/assets/category:Audio)** – Ready-made game SFX and jingles in the classic Kenney style. `FREE`
 - **[Looperman](https://www.looperman.com)** – Free loops and acapellas from a community of producers. `FREE` `WEB`
