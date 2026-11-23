@@ -153,6 +153,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Ink](https://www.inklestudios.com/ink/)** – Narrative scripting language by Inkle, with exporters for Unity, Godot and the web. `OSS` `FREE`
 - **[Inky](https://github.com/inkle/inky)** – The official editor for Ink, with live story previews. `OSS` `FREE`
 - **[Naninovel](https://naninovel.com)** – Full-featured visual-novel framework for Unity with a polished editor. `PAID`
+- **[OpenFMV](https://github.com/Sheldon23357/OpenFMV)** – Visual editor for branching interactive films with Windows and HTML5 game export. `OSS`
 - **[Quest](https://textadventures.co.uk/quest)** – Free text-adventure creator with a visual editor and web player. `FREEMIUM` `WEB`
 - **[Ren'Py](https://www.renpy.org)** – The most popular visual-novel engine, with Python scripting under the hood. `OSS` `FREE`
 - **[Twine](https://twinery.org)** – Open-source tool for branching, hypertext-driven stories; runs in your browser. `OSS` `FREE` `WEB`
