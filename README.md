@@ -658,6 +658,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Quaternius](https://quaternius.com)** – Beautiful free low-poly models and animation packs, CC0. `FREE` `WEB`
 - **[Sketchfab](https://sketchfab.com)** – Massive 3D model library with a large free and CC-licensed selection. `FREEMIUM` `WEB`
 - **[The Models Resource](https://www.models-resource.com)** – Ripped models from games — useful for study, check licenses carefully. `FREE` `WEB`
+- **[ThreeDee](https://www.threedee.design/)** – Stylized rigged 3D characters and modular asset packs for Blender. `PAID` `WEB`
 - **[TurboSquid](https://www.turbosquid.com)** – Large professional 3D marketplace with free picks. `FREEMIUM` `WEB`
 
 ### 8.3 Textures, Materials and HDRIs
