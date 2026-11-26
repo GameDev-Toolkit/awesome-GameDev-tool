@@ -1097,6 +1097,8 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Ora Playables](https://lyp1314.github.io/playable-ads-portfolio/)** – Three HTML5 playable ad templates (~25 KB). Pay USDT on BNB Chain and get a file with your store link already wired in. `PAID` `WEB`
 - **[presskit()](https://dopresskit.com)** – Free, proven structure for a press kit that journalists actually use. `FREE` `WEB`
 - **[Steam Next Fest](https://store.steampowered.com/sale/nextfest)** – Valve's demo festival; the biggest wishlist driver for indies. `FREE` `WEB`
+- **[WHETHER](https://www.whether.games/)** – Get feedback on your game pitch deck and find publishers that fit your game. `FREEMIUM` `WEB`
+- **[WHETHER Steam Revenue Calculator](https://www.whether.games/tools/steam-revenue-calculator)** – Estimate how many copies your game needs to sell to break even, with or without a publisher. `FREE` `WEB`
 - **[Wholesome Games](https://www.wholesomegames.com)** – Showcase and community for cozy, wholesome titles. `FREE` `WEB`
 - **[Woovit](https://woovit.com)** – Connect with streamers and YouTubers for coverage. `FREEMIUM` `WEB`
 
