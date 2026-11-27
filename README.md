@@ -883,6 +883,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Leonardo AI](https://leonardo.ai)** – Game-art oriented generator with model training and asset presets. `FREEMIUM` `AI` `WEB`
 - **[Midjourney](https://www.midjourney.com)** – Highly aesthetic concept art generator for mood and exploration. `PAID` `AI` `WEB`
 - **[Photoroom](https://www.photoroom.com)** – Fast background removal and mockup generation. `FREEMIUM` `AI` `WEB`
+- **[RBXGFX](https://rbxgfx.com)** – AI generator for 1920x1080 Roblox game thumbnails and 512x512 icons producing 5 distinct compositions per prompt, plus free browser spec and cropping utilities. `FREEMIUM` `AI` `WEB`
 - **[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN)** – Practical image restoration and upscaling models. `OSS` `FREE` `AI`
 - **[rembg](https://github.com/danielgatis/rembg)** – One-command background removal library. `OSS` `FREE` `AI`
 - **[Retro Diffusion](https://retrodiffusion.ai)** – Pixel-art-specific generation and animation models. `PAID` `AI` `WEB`
