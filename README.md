@@ -581,6 +581,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Kenney Audio](https://kenney.nl/assets/category:Audio)** – Ready-made game SFX and jingles in the classic Kenney style. `FREE`
 - **[Looperman](https://www.looperman.com)** – Free loops and acapellas from a community of producers. `FREE` `WEB`
 - **[Mixkit](https://mixkit.co/free-sound-effects/)** – Free SFX and music clips for games and video. `FREE` `WEB`
+- **[No Kings Music](https://nokingsmusic.com/)** – Royalty-free cues for game trailers and cutscenes, with 40 free tracks requiring an account and credit. `FREEMIUM` `WEB`
 - **[Pixabay Sound Effects](https://pixabay.com/sound-effects/)** – Free SFX and music under a permissive license. `FREE` `WEB`
 - **[Sonniss GDC Game Audio Bundle](https://sonniss.com/gameaudiogdc)** – Gigabytes of royalty-free professional SFX released every GDC. `FREE`
 - **[SoundBible](https://soundbible.com)** – Simple collection of free, categorised sound effects. `FREE` `WEB`
