@@ -234,6 +234,7 @@ New to this list (or to gamedev)? Pick your path — everything is linked in the
 - **[Aseprite](https://www.aseprite.org)** – The industry favourite: layers, onion skin, tags, tilesets and a powerful CLI. `PAID` `OSS`
 - **[GrafX2](https://gitlab.com/GrafX2/grafx2)** – Free pixel-painting program inspired by Deluxe Paint. `OSS` `FREE`
 - **[GraphicsGale](https://graphicsgale.com/us/)** – Long-standing pixel and animation editor, now freeware. `FREE`
+- **[Gridwright](https://gridwright.dev/)** – 41 browser tools for tilesets, autotiles, sprite sheets, palettes, maps and bitmap fonts, plus 148 asset packs. `PAID` `WEB`
 - **[Hexels](https://marmoset.co/hexels/)** – Grid-based vector art tool for isometric and hexagonal pixel styles. `PAID`
 - **[LibreSprite](https://libresprite.github.io)** – Free fork of the last open-source Aseprite, actively maintained. `OSS` `FREE`
 - **[Piskel](https://www.piskelapp.com)** – Dead-simple browser pixel editor and sprite animator. `OSS` `FREE` `WEB`
